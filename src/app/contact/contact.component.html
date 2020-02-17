@@ -1,33 +1,51 @@
-<h1>Contact us</h1>
+<div class="contact-us">
+  <h1>Contact us</h1>
+  <form [formGroup]="messageForm" (ngSubmit)="onSubmit()" class="form">
 
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+      <h5 *ngIf="success">Your form is valid!</h5>
 
-    <h5 *ngIf="success">Your form is valid!</h5>
+      <label>
+        Name:
+        <input type="text" formControlName="name">
+        <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+          <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
+        </div>
+      </label>
+    
+      <label>
+        Message:
+        <textarea formControlName="message"></textarea>
+        <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
+          <div *ngIf="messageForm.controls.message.errors.required">A message is required</div>
+        </div>
+      </label>
 
-    <label>
-      Name:
-      <input type="text" formControlName="name">
-      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
-        <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
-      </div>
-    </label>
-  
-    <label>
-      Message:
-      <textarea formControlName="message"></textarea>
-      <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
-        <div *ngIf="messageForm.controls.message.errors.required">A message is required</div>
-      </div>
-    </label>
+      <input type="submit" value="Send message" class="cta">
+    
+    </form>
 
-    <input type="submit" value="Send message" class="cta">
-  
-  </form>
+    <div *ngIf="submitted" class="results">
+      <strong>Name:</strong> 
+      <span>{{ messageForm.controls.name.value }}</span>
 
-  <div *ngIf="submitted" class="results">
-    <strong>Name:</strong> 
-    <span>{{ messageForm.controls.name.value }}</span>
-
-    <strong>Message:</strong> 
-    <span>{{ messageForm.controls.message.value }}</span>
+      <strong>Message:</strong> 
+      <span>{{ messageForm.controls.message.value }}</span>
+    </div>
+</div>
+<div class="social-networks">
+  <p>You can also reach me on the following social networks:</p>
+  <div class="social-networks-items">
+    <div>
+      <p>Github</p>
+      <a href="https://github.com/ozbej"><img class="social-networks-image" src="assets/logo-github.png"></a>
+    </div>
+    <div>
+      <p>LinkedIn</p>
+      <a href="https://www.linkedin.com/in/o%C5%BEbej-golob-6b29bb16a/"><img class="social-networks-image" src="assets/logo-linkedin.png"></a>
+    </div>
+    <div>
+      <p>Instagram</p>
+      <a href="https://www.instagram.com/ozbejgolob/"><img class="social-networks-image" src="assets/logo-instagram.png"></a>
+    </div>
   </div>
+</div>

@@ -1,3 +1,40 @@
+$primary-color: #7700FF;
+
+.social-networks {
+    background-color: $primary-color;
+    text-align: center;
+    color: white;
+    padding: 3% 0 3% 0;
+
+    &-image {
+        width: 50px;
+    }
+
+    &-items {
+        width: 30%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+.contact-us {
+    width: 40%;
+    margin: auto; 
+    margin-top: 5%;
+    margin-bottom: 5%;
+    box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.15);
+
+    h1 {
+        padding-left: 2%;
+    }
+}
+
+.form {
+    padding: 2%;
+}
+
 label {
     display: block;
     
@@ -32,6 +69,7 @@ label {
 
 .results {
     margin-top: 50px;
+    padding: 0 2% 2% 2%;
 
     strong {
         display: block;
