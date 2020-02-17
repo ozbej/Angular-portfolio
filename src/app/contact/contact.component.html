@@ -5,17 +5,17 @@
       <h5 *ngIf="success">Your form is valid!</h5>
 
       <label>
-        Name:
+        Name:<br>
         <input type="text" formControlName="name">
-        <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+        <br><div *ngIf="submitted && messageForm.controls.name.errors" class="error">
           <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
         </div>
       </label>
     
-      <label>
-        Message:
+      <br><label>
+        Message:<br>
         <textarea formControlName="message"></textarea>
-        <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
+        <br><div *ngIf="submitted && messageForm.controls.message.errors" class="error">
           <div *ngIf="messageForm.controls.message.errors.required">A message is required</div>
         </div>
       </label>

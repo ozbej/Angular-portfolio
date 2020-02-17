@@ -16,6 +16,11 @@ $secondary-color: #c28cff;
         box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.15);
         width: 40%;
         border-radius: 10px;
+        min-width: 300px;
+
+        li {
+            padding: 0.5%;
+        }
 
         h1 {
             color: $primary-color;
@@ -33,11 +38,31 @@ $secondary-color: #c28cff;
 
         &-date {
             width: 100%;
-            text-align: end;
+            text-align: right;
         }
 
         &-title {
             color: $primary-color;
+        }
+
+        &-skill {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &-image {
+                width: 40%;
+                height: 8px;
+            }
+        }
+
+        &-profile {
+            p {
+                margin: 0;
+                padding: 0;
+                padding-bottom: 1%;
+            }
         }
     }
 }
